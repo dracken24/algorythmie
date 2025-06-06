@@ -1,0 +1,1 @@
+   <!-- python -c "from src.test_bigo import main; main()" -->
