@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run TP1",
+            "type": "shell",
+            "command": "uv run src/tp_1/__init__.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run TP1 (Debug)",
+            "type": "shell",
+            "command": "uv run src/tp_1/__init__.py",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+} 
