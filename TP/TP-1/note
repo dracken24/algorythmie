@@ -1,0 +1,7 @@
+Tableau statique : array
+
+Tableau dynamique : list
+
+Liste simplement chaînée : deque avec maxlen=None
+
+Liste doublement chaînée : deque
