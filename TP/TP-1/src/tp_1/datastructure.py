@@ -2,11 +2,11 @@
 ===============================================================================    */
 ---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---    */
               -------------------------------------------------                    */
-               PROJET: <React Learning2>          PAR: Dracken24                   */
+               PROJET: <TP1>          PAR: Dracken24                               */
               -------------------------------------------------                    */
-               CREATED: 10-6th-2025                                                */
+               CREATED: 12-6th-2025                                                */
                MODIFIED BY: Dracken24                                              */
-               LAST MODIFIED: 10-6th-2025                                          */
+               LAST MODIFIED: 12-6th-2025                                          */
               -------------------------------------------------                    */
                FILE: datastructure.py                                              */
               -------------------------------------------------                    */
@@ -17,6 +17,14 @@
 import array
 import collections
 import sys
+
+# Mapping des types Python vers les types array
+TYPE_MAPPING = {
+    int: 'i',
+    float: 'f',
+    bool: 'b',
+    str: 'u'
+}
 
 class datastructure:
     def __init__(self, type: type):
@@ -29,7 +37,9 @@ class datastructure:
 
 class StaticArray:
     def __init__(self, dtype: type):
-        self.array: array.array = array.array(dtype)
+        if dtype not in TYPE_MAPPING:
+            raise TypeError(f"Type non supporté. Types supportés: {list(TYPE_MAPPING.keys())}")
+        self.array: array.array = array.array(TYPE_MAPPING[dtype])
         self.size: int = 0
 
     # get the value at the index
@@ -118,8 +128,7 @@ class DynamicArray:
 class SinglyLinkedList:
     
     def __init__(self):
-        self.deque: collections.deque = collections.deque()
-        self.deque.maxlen = None
+        self.deque: collections.deque = collections.deque(maxlen=None)
 
     # get the value at the index
     def get(self, index: int) -> any:
@@ -143,7 +152,7 @@ class SinglyLinkedList:
 
     # delete the value at the middle
     def delete_mid(self, index: int) -> None:
-        self.deque.pop(index)
+        self.deque.remove(self.deque[index])
 
     # delete the value at the tail
     def delete_tail(self) -> None:
@@ -183,7 +192,7 @@ class DoublyLinkedList:
 
     # delete the value at the middle
     def delete_mid(self, index: int) -> None:
-        self.deque.pop(index)
+        self.deque.remove(self.deque[index])
 
     # delete the value at the tail
     def delete_tail(self) -> None:
