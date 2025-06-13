@@ -26,7 +26,7 @@ class benchmark:
 
         self.fill_array(value)
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage in : " + str(memory_usage))
 
         start_time = time.time()
@@ -34,7 +34,7 @@ class benchmark:
             self.container_to_test.get(v)
         end_time = time.time()
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage out: " + str(memory_usage))
 
         return end_time - start_time
@@ -43,15 +43,15 @@ class benchmark:
 
     def test_insert_head(self, value: list[any]) -> float:
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage in : " + str(memory_usage))
 
-        start_time = time.time()
+        start_time: float = time.time()
         for v in value:
             self.container_to_test.insert_head(v)
         end_time = time.time()
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage out: " + str(memory_usage))
 
         return end_time - start_time
@@ -60,15 +60,15 @@ class benchmark:
 
     def test_insert_mid(self, value: list[any]) -> float:
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage in : " + str(memory_usage))
 
-        start_time = time.time()
+        start_time: float = time.time()
         for v in value:
             self.container_to_test.insert_mid(v, v)
-        end_time = time.time()
+        end_time: float = time.time()
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage out: " + str(memory_usage))
 
         return end_time - start_time
@@ -77,15 +77,15 @@ class benchmark:
 
     def test_insert_tail(self, value: list[any]) -> float:
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage in : " + str(memory_usage))
 
-        start_time = time.time()
+        start_time: float = time.time()
         for v in value:
             self.container_to_test.insert_tail(v)
-        end_time = time.time()
+        end_time: float = time.time()
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage out: " + str(memory_usage))
 
         return end_time - start_time
@@ -96,15 +96,15 @@ class benchmark:
 
         self.fill_array(value)
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage in : " + str(memory_usage))
 
-        start_time = time.time()
+        start_time: float = time.time()
         for v in value:
             self.container_to_test.delete_head()
-        end_time = time.time()
+        end_time: float = time.time()
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage out: " + str(memory_usage))
 
         return end_time - start_time
@@ -118,10 +118,10 @@ class benchmark:
         memory_usage = self.container_to_test.memory_usage()
         print("memory usage in : " + str(memory_usage))
 
-        start_time = time.time()
+        start_time: float = time.time()
         for v in value:
             self.container_to_test.delete_mid((int)(len(value) / 2))
-        end_time = time.time()
+        end_time: float = time.time()
 
         memory_usage = self.container_to_test.memory_usage()
         print("memory usage out: " + str(memory_usage))
@@ -134,15 +134,15 @@ class benchmark:
 
         self.fill_array(value)
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage in : " + str(memory_usage))
 
-        start_time = time.time()
+        start_time: float = time.time()
         for v in value:
             self.container_to_test.delete_tail()
-        end_time = time.time()
+        end_time: float = time.time()
 
-        memory_usage = self.container_to_test.memory_usage()
+        memory_usage: int = self.container_to_test.memory_usage()
         print("memory usage out: " + str(memory_usage))
 
         return end_time - start_time

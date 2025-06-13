@@ -18,7 +18,7 @@ import array
 import collections
 import sys
 
-# Mapping des types Python vers les types array
+# Mapping types for array
 TYPE_MAPPING = {
     int: 'i',
     float: 'f',
