@@ -51,7 +51,7 @@ def test_with_capacity(data: datastructure, capacity: int) -> None:
     print("******************** TEST WITH " + str(capacity) + " ELEMENTS *******************")
 
     print("\n----------------------------------------------------------------")
-    print("-----------------------Get " + str(capacity) + "---------------------------------")
+    print("                      Get " + str(capacity) + "")
     print("----------------------------------------------------------------")
     # test get
     result_1 = static_array.test_get(insert_capacity)
@@ -70,7 +70,7 @@ def test_with_capacity(data: datastructure, capacity: int) -> None:
 
 
     print("\n----------------------------------------------------------------")
-    print("-----------------------Insert head " + str(capacity) + "-------------------------")
+    print("                       Insert head " + str(capacity))
     print("----------------------------------------------------------------")
     # test insert head
     result_1 = static_array.test_insert_head(insert_capacity)
@@ -88,7 +88,7 @@ def test_with_capacity(data: datastructure, capacity: int) -> None:
     results_insert_head.append((capacity, result_1, result_2, result_3, result_4))
 
     print("\n----------------------------------------------------------------")
-    print("-----------------------Insert mid " + str(capacity) + "--------------------------")
+    print("                       Insert mid " + str(capacity))
     print("----------------------------------------------------------------")
     # test insert mid
     result_1 = static_array.test_insert_mid(insert_capacity)
@@ -106,7 +106,7 @@ def test_with_capacity(data: datastructure, capacity: int) -> None:
     results_insert_mid.append((capacity, result_1, result_2, result_3, result_4))
 
     print("\n----------------------------------------------------------------")
-    print("-----------------------Insert tail " + str(capacity) + "-------------------------")
+    print("                        Insert tail " + str(capacity))
     print("----------------------------------------------------------------")
     # test insert tail
     result_1 = static_array.test_insert_tail(insert_capacity)
@@ -124,7 +124,7 @@ def test_with_capacity(data: datastructure, capacity: int) -> None:
     results_insert_tail.append((capacity, result_1, result_2, result_3, result_4))
 
     print("\n----------------------------------------------------------------")
-    print("-----------------------Delete head " + str(capacity) + "-------------------------")
+    print("                       Delete head " + str(capacity))
     print("----------------------------------------------------------------")
     # test delete head
     result_1 = static_array.test_delete_head(insert_capacity)
@@ -142,7 +142,7 @@ def test_with_capacity(data: datastructure, capacity: int) -> None:
     results_delete_head.append((capacity, result_1, result_2, result_3, result_4))
 
     print("\n----------------------------------------------------------------")
-    print("-----------------------Delete mid " + str(capacity) + "--------------------------")
+    print("                       Delete mid " + str(capacity))
     print("----------------------------------------------------------------")
     # test delete mid
     result_1 = static_array.test_delete_mid(insert_capacity)
@@ -160,7 +160,7 @@ def test_with_capacity(data: datastructure, capacity: int) -> None:
     results_delete_mid.append((capacity, result_1, result_2, result_3, result_4))
 
     print("\n----------------------------------------------------------------")
-    print("-----------------------Delete tail " + str(capacity) + "-------------------------")
+    print("                       Delete tail " + str(capacity))
     print("----------------------------------------------------------------")
     # test delete tail
     result_1 = static_array.test_delete_tail(insert_capacity)
