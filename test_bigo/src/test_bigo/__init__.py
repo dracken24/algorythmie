@@ -90,3 +90,6 @@ def main() -> None:
     print("Le graphique a été sauvegardé dans 'comparaison.png'")
 
 # ------------------------------------------------------------------------------- #
+
+if __name__ == "__main__":
+    main()
