@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 from typing import List, Tuple
 
 # ------------------------------------------------------------------- #
-# -----------------------------TESTS--------------------------------- #
+# ---------------------------- TESTS -------------------------------- #
 # ------------------------------------------------------------------- #
 
 results_get: List[Tuple[int, float, float, float, float]] = []
@@ -220,6 +220,7 @@ def generer_graphique(resultats: List[Tuple[int, float, float, float, float]], n
 # ------------------------------------------------------------------- #
 
 def generer_all_graphiques() -> None:
+
     generer_graphique(results_get, "Get", "result/comparaison_get.png")
     generer_graphique(results_insert_head, "Insert Head", "result/comparaison_insert_head.png")
     generer_graphique(results_insert_mid, "Insert Mid", "result/comparaison_insert_mid.png")

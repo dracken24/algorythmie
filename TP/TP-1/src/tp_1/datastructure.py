@@ -23,7 +23,6 @@ TYPE_MAPPING = {
     int: 'i',
     float: 'f',
     bool: 'b',
-    str: 'u'
 }
 
 class datastructure:
