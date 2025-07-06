@@ -42,6 +42,37 @@ N'est pas optimal pour les données qui nécéssite un tri fréquent. N'a pas d'
 
 Ne gère pas les données avec relations complexes comme dans le cas d'une bases de données relationnelles qui fonctionnerait mieux avec un map pour garder la meme structure de donnée.
 
+
+### Le fifo
+
+#### Avantages:
+
+Dans un container de type fifo, c'est le premier element qui est le premier a sortir. Il serait optimal de l'utiliser dans le cas d'une file d'attente. C'est comme aller a la SAAQ et prendre un ticket pour attendre son tour. Premier arriver, premier servi.
+
+Peut etre tres utile dans un system de streaming. Permet d'avoir un buffer de donnee pour le traitement en continue pour difuser le contenue deja charger dans le buffer.
+
+#### Inconvenients:
+
+N'est pas optimal quand il sagit de traiter des priorites. Comme une Urgence dans un hopital pour gerer la priorite de traitement pour les nouveaux arrivants. Un deque serait plus approprie.
+
+N'est pas non plus concu pour tout ce qui est de la gestion bidirectionnel comme pour la gestion de page web.
+
+
+### Le hashtable
+
+#### Avantages:
+
+Permet de rechercher facilement un element par une cle. C'est a dire que meme si la value de la node<key, value>() contient beaucoup de donnee, si la cle est exemple un id "int", le hashtable va iterer sur la grandeur du int et non la grandeur de l'objet "value" contenue dans la node. Donc, tres rapide pour la recherche.
+
+Serait tres optimal dans le cas d'un recencement de la population. node<int, class habitant>().
+
+#### Inconvenients:
+
+N'est pas optimal pour trier des objet exemple, par ordre de gandeur. Un arbre de recherche equilibre (red black tree) serait plus approprie.
+
+Comme le binary tree, il n'est pas optimiser pour prendre des plages pour la recherche vue que les elements ne sont pas trie en ordre.
+
+
 ### Le tree
 
 #### Avantages:
