@@ -1,7 +1,10 @@
 # Travail pratique 2
+
+Nadia Desjardins
+
 ## Analyse de differents containers
 
-Voici les containers que nous allons analyser:
+Voici les containers que nous allons analyser dans le cadre du cours d'algorythmie:
 
 #### • binarytree
 #### • deque
@@ -11,7 +14,9 @@ Voici les containers que nous allons analyser:
 #### • linkedlist
 #### • tree
 
-## Résultats des tests
+Voici une analyse de chaqu'un d'eux pour trouver leurs avantages et leurs inconvenients.
+
+## Résultats
 
 ### Le binarytree
 
@@ -59,6 +64,7 @@ N'est pas non plus concu pour tout ce qui est de la gestion bidirectionnel comme
 
 
 ### Le hashtable
+Voici un conteneur de type "[Map](https://github.com/dracken24/container/blob/main/includes/templates/map.hpp)" fait dans le cadre du module container c++ de 42 Quebec.
 
 #### Avantages:
 
@@ -71,6 +77,66 @@ Serait tres optimal dans le cas d'un recencement de la population. node<int, cla
 N'est pas optimal pour trier des objet exemple, par ordre de gandeur. Un arbre de recherche equilibre (red black tree) serait plus approprie.
 
 Comme le binary tree, il n'est pas optimiser pour prendre des plages pour la recherche vue que les elements ne sont pas trie en ordre.
+
+
+### Le lifo
+
+#### Avantages:
+
+Le lifo (last in first out) est optimal pour utiliser le dernier element entree dans le container en premier. Exemple, les dernieres commandes utiliser dans un traitement de texte. Ctrl + z revient a l'avant derniere commande utiliser (last in).
+
+Pourrait etre tres bien dans un system d'allocation lineaire pour un programme core. Sa permetterait de liberer la memoire dans le meme ordre que sa a ete alouer pour eviter les fuites de memoires. Tres utile pour les programmes en C.
+
+#### Inconvenients:
+
+Fonctionnerait tres mal dans le cas ou on aurais besoins d'acceder aux elements en bas de la pile au lieu d'au dessus comme un traitement de commande par ordre alphabetique.
+
+Comme il a un ordre fixe, il serait tres difficile avec ce conteneur de vouloir trier les donnees ou rechercher par plage.
+
+
+### Le linkedlist
+
+#### Avantages:
+
+Utile pour les systems de gestion de memoire. Comme chaue objet est une node avec un pointeur ver un next (uni-directionnel), vers un last (bi-directionnel), les nodes sont allouer dinamiquement. Donc si on ajoute un element, le programme va malloc le nouvel element sans impacter les autres.
+
+``` c
+struct MaNode
+{
+    void			*content;
+	struct MaNode	*next;
+}
+```
+
+Fonction pour ajouter un element dans une liste. Memory alloc avec calloc au lieu de malloc pour flood la memoire avec des '\0'. (J'ai une formation e C/C++ de 1 1/2 ans)
+
+``` c
+MaNode	*ft_lstnew(void *content)
+{
+	MaNode	*new;
+
+	new = calloc(sizeof(MaNode), 1);
+	if (!new)
+    {
+		return (NULL);
+    }
+
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+```
+
+on voit bien que les nodes sont allouer en memoire independament l'une de l'autre.
+"[Source Mon Github](https://github.com/dracken24/my_lib/blob/main/lst/ft_lstnew.c)"
+
+il ne faut pas oublier de connecter les nodes lors de l'effacement de l'une d'elle.
+
+#### Inconvenients:
+
+N'est pas optimal pour la recherche de contenue. Etant lineaire, il faudrait parfois parcourrir la liste entiere pour trouver un element. Un conteneur avec un arbre rouge/noir serait mieux pour la recherche.
+
+Comme une node pointe vers une autre node, sa veut dire que chaque node a une addresse memoire dispercer sur l'espace memoire. Donc, les elements ne sont pas bout a bout. Cela demande plus de ram pour trouver les elements.
 
 
 ### Le tree
@@ -86,6 +152,8 @@ Les arbres sont aussi beaucoup utiliser dans l'industrie du jeu video comme dans
 Le tree est beaucoup moins optimal pour faire des recherches par plages. Comme le tree a beaucoup de ramifications, il peut etre couteux en mémoire. Comme dans le cas ou on aurait 2 nombres a chercher. Un serait tout au bout a gauche et l'autre tout au bout a droite. Il faudrait parcourrir toute l'arbre pour trouver ces 2 nombres.
 
 Ils ne sont pas concus pour les acces aleatoires frequants. Comme les nodes sont a des addresse differents dans la memoire contrairement a un tableau avec des adresses une a la suite de l'autre. (La on entre dans la notion de pointeurs que je vois beaucoup quand je fais du c ou c++).
+
+##### Comme vous pouvez le voir, chaque containeur est plus utile qu'un autre dans certains cas. Cela montre qu'il est tres important de bien choisir son container pour chaques projet selon les besoins.
 
 
 Voici le projet "[Container](https://github.com/dracken24/container/tree/main/includes/templates)" que j'ai eu a coder a 42Quebec. Il fallait coder en c++ un map, un vector et un stack en class template avec leurs iterators et avec std::allocator.
