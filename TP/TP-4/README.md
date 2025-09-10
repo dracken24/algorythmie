@@ -30,7 +30,13 @@ Ce projet contient un guide d'utilisation des patrons de conception vus dans le 
 Voici des images du jeu que je suis en train de construire en suivant le plus possible les patrons de conception mais en C#.
 
 images du jeu:
+
+### Un peu de code
 ![Image du jeu](./imgs/Screenshot_1.png)
+
+### Connexion UI
 ![Image du jeu](imgs/Screenshot_2.png)
+
+### Demo ingame
 ![Image du jeu](imgs/Screenshot_3.png)
 
