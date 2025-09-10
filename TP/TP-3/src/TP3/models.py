@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from datetime import datetime
 from typing import Optional
 
 # Class qui represente un livre
@@ -13,8 +12,9 @@ class Book:
     available: bool
     added_date: str
     
+	# Convertir en dictionnaire
     def to_dict(self) -> dict:
-        return {
+        return{
             'id': self.id,
             'title': self.title,
             'author': self.author,
@@ -24,16 +24,17 @@ class Book:
             'added_date': self.added_date
         }
     
+	# Convertir depuis un dictionnaire
     @classmethod
-    def from_dict(cls, data: dict) -> 'Book':
+    def from_dict(cls, infos: dict) -> 'Book':
         return cls(
-            id=data['id'],
-            title=data['title'],
-            author=data['author'],
-            isbn=data['isbn'],
-            category=data['category'],
-            available=data['available'],
-            added_date=data['added_date']
+            id=infos['id'],
+            title=infos['title'],
+            author=infos['author'],
+            isbn=infos['isbn'],
+            category=infos['category'],
+            available=infos['available'],
+            added_date=infos['added_date']
         )
 
 # Class qui represente un utilisateur
@@ -48,6 +49,7 @@ class User:
     max_loans: int
     loan_duration: int
     
+	# Convertir en dictionnaire
     def to_dict(self) -> dict:
         return {
             'id': self.id,
@@ -60,17 +62,18 @@ class User:
             'loan_duration': self.loan_duration
         }
     
+	# Convertir depuis un dictionnaire
     @classmethod
-    def from_dict(cls, data: dict) -> 'User':
+    def from_dict(cls, infos: dict) -> 'User':
         return cls(
-            id=data['id'],
-            name=data['name'],
-            email=data['email'],
-            user_type=data['type'],
-            registration_date=data['registration_date'],
-            active=data['active'],
-            max_loans=data['max_loans'],
-            loan_duration=data['loan_duration']
+            id=infos['id'],
+            name=infos['name'],
+            email=infos['email'],
+            user_type=infos['type'],
+            registration_date=infos['registration_date'],
+            active=infos['active'],
+            max_loans=infos['max_loans'],
+            loan_duration=infos['loan_duration']
         )
 
 # Class qui represente un emprunt
@@ -84,6 +87,7 @@ class Loan:
     returned: bool
     return_date: Optional[str]
     
+	# Convertir en dictionnaire
     def to_dict(self) -> dict:
         return {
             'id': self.id,
@@ -95,14 +99,15 @@ class Loan:
             'return_date': self.return_date
         }
     
+	# Convertir depuis un dictionnaire
     @classmethod
-    def from_dict(cls, data: dict) -> 'Loan':
+    def from_dict(cls, infos: dict) -> 'Loan':
         return cls(
-            id=data['id'],
-            user_id=data['user_id'],
-            book_id=data['book_id'],
-            loan_date=data['loan_date'],
-            due_date=data.get('due_date'),
-            returned=data['returned'],
-            return_date=data.get('return_date')
+            id=infos['id'],
+            user_id=infos['user_id'],
+            book_id=infos['book_id'],
+            loan_date=infos['loan_date'],
+            due_date=infos.get('due_date'),
+            returned=infos['returned'],
+            return_date=infos.get('return_date')
         )

@@ -1,6 +1,10 @@
 # 2025H-420-930-MA TP3 : SYSTÈME DE GESTION DE BIBLIOTHÈQUE
 
-**Nom des étudiants :** [Vos noms ici]
+**Nom des étudiants :** Nadia Desjardins
+
+***
+#### Je suis supposée etre en équipe avec Élisé Nicolas mais j'ai essayé dèntrer en contacte avec lui vendredi pour la remise mais je n'ai eu aucunes nouvelles de lui alors je vous remet ce tp seule.
+***
 
 Le but de ce TP est de refactoriser un code existant qui gère une bibliothèque.
 Le code viole intentionnellement les principes SOLID et manque d'implémentation
